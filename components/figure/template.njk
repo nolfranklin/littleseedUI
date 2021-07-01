@@ -1,6 +1,11 @@
-<figure>
-	<img src="" alt="" />
-	<figcaption>
-		...
-	</figcaption>
-</figure>
+{% macro stacked(src, alt, figcaption) %}
+	<figure class="component component--figure">
+		<img
+			src="{{ src }}"
+			alt="{{ alt }}"
+		/>
+		<figcaption>
+			{{ figcaption }}
+		</figcaption>
+	</figure>
+{% endmacro %}
