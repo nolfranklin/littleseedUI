@@ -1,0 +1,12 @@
+{% macro blockquote(text,cite) %}
+	<div class="component component--blockquote">
+		<blockquote class="py-10">
+			<span class="text-4xl">
+				{{ text }}
+			</span>
+			<cite>
+				{{ cite }}
+			</cite>
+		</blockquote>
+	</div>
+{% endmacro %}

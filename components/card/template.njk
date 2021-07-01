@@ -1,0 +1,13 @@
+{% macro stacked(title, link, image, excerpt) %}
+	<div class="component component--card py-10">
+		<a href="{{ link }}" class="flex flex-wrap">
+			<img src="{{ image }}&w=150&h=150&fit=crop" alt="" loading="lazy" class="flex-0" />
+			<div class="w-5/6 pl-5">
+				<h2 class="text-2xl mb-2 text-blue-600">
+					{{ title }}
+				</h2>
+				{{ excerpt }}
+			</div>
+		</a>
+	</div>
+{% endmacro %}
