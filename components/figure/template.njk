@@ -1,3 +1,5 @@
+{% import "../button/template.njk" as button %}
+
 {% macro stacked(src, alt, figcaption) %}
 	<figure class="component component--figure">
 		<img
@@ -7,5 +9,6 @@
 		<figcaption>
 			{{ figcaption }}
 		</figcaption>
+		{{ button("test") }}
 	</figure>
 {% endmacro %}
