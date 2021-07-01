@@ -1,0 +1,7 @@
+{% macro grid(columns, gap, content) %}
+	<div class="component component--card py-10">
+		<div class="grid grid-cols-{{columns}} gap-{{ gap }}">
+			{{ content }}
+		</div>
+	</div>
+{% endmacro %}
