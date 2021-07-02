@@ -1,5 +1,66 @@
-{% macro heading(heading_size, heading_level, text) %}
-	<h{{heading_level}} class="{{ heading_size }}">
+{% macro heading(level, size, text, classes, id) %}
+
+	{# Set button level (ex: 1-6), Defaults to 1 if empty #}
+
+	{{ setLevel }}
+		{% if level === 1 %}
+			{% set level = 1 %}
+		{% elif level === 2 %}
+			{% set level = 2 %}
+		{% elif level === 3 %}
+			{% set level = 3 %}
+		{% elif level === 4 %}
+			{% set level = 4 %}
+		{% elif level === 5 %}
+			{% set level = 5 %}
+		{% elif level === 6 %}
+			{% set level = 6 %}
+		{% else %}
+			{% set level = 1 %}
+		{% endif %}
+	{{ setLevel }}
+
+	{# Set font size #}
+
+	{{ setSize }}
+		{% if size === 'xs' %}
+			{% set size = "text-xs" %}
+		{% elif size === 'sm' %}
+			{% set size = "text-sm" %}
+		{% elif size === 'base' %}
+			{% set size = "text-base" %}
+		{% elif size === 'lg' %}
+			{% set size = "text-lg" %}
+		{% elif size === 'xl' %}
+			{% set size = "text-xl" %}
+		{% elif size === '2xl' %}
+			{% set size = "text-2xl" %}
+		{% elif size === '3xl' %}
+			{% set size = "text-3xl" %}
+		{% elif size === '4xl' %}
+			{% set size = "text-4xl" %}
+		{% elif size === '5xl' %}
+			{% set size = "text-5xl" %}
+		{% elif size === '6xl' %}
+			{% set size = "text-6xl" %}
+		{% elif size === '7xl' %}
+			{% set size = "text-7xl" %}
+		{% elif size === '8xl' %}
+			{% set size = "text-8xl" %}
+		{% elif size === '9xl' %}
+			{% set size = "text-9xl" %}
+		{% else %}
+			{% set size = '' %}
+		{% endif %}
+	{{ setSize }}
+
+	{# Heading template #}
+
+	<h{{level}}
+		class="heading {{ size }} {{ classes }}"
+		id="{{ id }}"
+	>
 		{{ text }}
-	</h{{heading_level}}>
+	</h{{level}}>
+
 {% endmacro %}

@@ -1,0 +1,37 @@
+---
+layout: layouts/base.njk
+title: Heading
+---
+{% import "../components/heading/template.njk" as heading %}
+
+<h2 class="text-3xl mb-10">
+	Sizes
+</h2>
+
+{{ heading.heading(
+		text='Heading XS',
+		level=3,
+		size="xs"
+	)
+}}
+
+{{ heading.heading(
+		text='Heading MD',
+		level=3,
+		size="md"
+	)
+}}
+
+{{ heading.heading(
+		text='Heading LG',
+		level=3,
+		size="lg"
+	)
+}}
+
+{{ heading.heading(
+		text='Heading XL',
+		level=3,
+		size="xl"
+	)
+}}
