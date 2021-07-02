@@ -1,66 +1,66 @@
-{% macro heading(level, size, text, classes, id) %}
+{% macro heading(heading_level, heading_size, heading_text, heading_classes, heading_id) %}
 
 	{# Set button level (ex: 1-6), Defaults to 1 if empty #}
 
 	{{ setLevel }}
-		{% if level === 1 %}
-			{% set level = 1 %}
-		{% elif level === 2 %}
-			{% set level = 2 %}
-		{% elif level === 3 %}
-			{% set level = 3 %}
-		{% elif level === 4 %}
-			{% set level = 4 %}
-		{% elif level === 5 %}
-			{% set level = 5 %}
-		{% elif level === 6 %}
-			{% set level = 6 %}
+		{% if heading_level === 1 %}
+			{% set heading_level = 1 %}
+		{% elif heading_level === 2 %}
+			{% set heading_level = 2 %}
+		{% elif heading_level === 3 %}
+			{% set heading_level = 3 %}
+		{% elif heading_level === 4 %}
+			{% set heading_level = 4 %}
+		{% elif heading_level === 5 %}
+			{% set heading_level = 5 %}
+		{% elif heading_level === 6 %}
+			{% set heading_level = 6 %}
 		{% else %}
-			{% set level = 1 %}
+			{% set heading_level = 1 %}
 		{% endif %}
 	{{ setLevel }}
 
 	{# Set font size #}
 
 	{{ setSize }}
-		{% if size === 'xs' %}
-			{% set size = "text-xs" %}
-		{% elif size === 'sm' %}
-			{% set size = "text-sm" %}
-		{% elif size === 'base' %}
-			{% set size = "text-base" %}
-		{% elif size === 'lg' %}
-			{% set size = "text-lg" %}
-		{% elif size === 'xl' %}
-			{% set size = "text-xl" %}
-		{% elif size === '2xl' %}
-			{% set size = "text-2xl" %}
-		{% elif size === '3xl' %}
-			{% set size = "text-3xl" %}
-		{% elif size === '4xl' %}
-			{% set size = "text-4xl" %}
-		{% elif size === '5xl' %}
-			{% set size = "text-5xl" %}
-		{% elif size === '6xl' %}
-			{% set size = "text-6xl" %}
-		{% elif size === '7xl' %}
-			{% set size = "text-7xl" %}
-		{% elif size === '8xl' %}
-			{% set size = "text-8xl" %}
-		{% elif size === '9xl' %}
-			{% set size = "text-9xl" %}
+		{% if heading_size === 'xs' %}
+			{% set heading_size = "text-xs" %}
+		{% elif heading_size === 'sm' %}
+			{% set heading_size = "text-sm" %}
+		{% elif heading_size === 'base' %}
+			{% set heading_size = "text-base" %}
+		{% elif heading_size === 'lg' %}
+			{% set heading_size = "text-lg" %}
+		{% elif heading_size === 'xl' %}
+			{% set heading_size = "text-xl" %}
+		{% elif heading_size === '2xl' %}
+			{% set heading_size = "text-2xl" %}
+		{% elif heading_size === '3xl' %}
+			{% set heading_size = "text-3xl" %}
+		{% elif heading_size === '4xl' %}
+			{% set heading_size = "text-4xl" %}
+		{% elif heading_size === '5xl' %}
+			{% set heading_size = "text-5xl" %}
+		{% elif heading_size === '6xl' %}
+			{% set heading_size = "text-6xl" %}
+		{% elif heading_size === '7xl' %}
+			{% set heading_size = "text-7xl" %}
+		{% elif heading_size === '8xl' %}
+			{% set heading_size = "text-8xl" %}
+		{% elif heading_size === '9xl' %}
+			{% set heading_size = "text-9xl" %}
 		{% else %}
-			{% set size = '' %}
+			{% set heading_size = '' %}
 		{% endif %}
 	{{ setSize }}
 
 	{# Heading template #}
 
-	<h{{level}}
-		class="heading {{ size }} {{ classes }}"
-		id="{{ id }}"
+	<h{{heading_level}}
+		class="component component--heading {{ heading_size }} {{ heading_classes }}"
+		id="{{ heading_id }}"
 	>
-		{{ text | safe }}
-	</h{{level}}>
+		{{ heading_text | safe }}
+	</h{{heading_level}}>
 
 {% endmacro %}

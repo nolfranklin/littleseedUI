@@ -1,49 +1,56 @@
-{% macro button(text,url,size,variation,classes, display) %}
+{% macro button(
+	button_text,
+	button_url,
+	button_size,
+	button_variation,
+	button_classes,
+	button_display
+) %}
 
 	{# Set a button size. If empty, no clasess are applied #}
 
 	{{ setDisplay }}
-		{% if display === 'block' %}
-			{% set display = "block" %}
-		{% elif display === 'inline-block' %}
-			{% set display = "inline-block" %}
+		{% if button_display === 'block' %}
+			{% set button_display = "block" %}
+		{% elif button_display === 'inline-block' %}
+			{% set button_display = "inline-block" %}
 		{% else %}
-			{% set display = '' %}
+			{% set button_display = '' %}
 		{% endif %}
 	{{ setDisplay }}
 
 	{{ setSize }}
-		{% if size === 'lg' %}
-			{% set size = "button--lg" %}
-		{% elif size === 'md' %}
-			{% set size = "button--md" %}
-		{% elif size === 'sm' %}
-			{% set size = "button--sm" %}
+		{% if button_size === 'lg' %}
+			{% set button_size = "button--lg" %}
+		{% elif button_size === 'md' %}
+			{% set button_size = "button--md" %}
+		{% elif button_size === 'sm' %}
+			{% set button_size = "button--sm" %}
 		{% else %}
-			{% set size = '' %}
+			{% set button_size = '' %}
 		{% endif %}
 	{{ setSize }}
 
 	{{ setVariation }}
-		{% if variation === 'primary' %}
-			{% set variation = "button--primary" %}
-		{% elif variation === 'secondary' %}
-			{% set variation = "button--secondary" %}
-		{% elif variation === 'outline' %}
-			{% set variation = "button--outline" %}
+		{% if button_variation === 'primary' %}
+			{% set button_variation = "button--primary" %}
+		{% elif button_variation === 'secondary' %}
+			{% set button_variation = "button--secondary" %}
+		{% elif button_variation === 'outline' %}
+			{% set button_variation = "button--outline" %}
 		{% else %}
-			{% set variation = '' %}
+			{% set button_variation = '' %}
 		{% endif %}
 	{{ setVariation }}
 
 	{# Button template #}
 
 	<a
-		href="{{ url }}"
-		class="button {{ variation }} {{ size }} {{ classes }} {{ display }}"
+		href="{{ button_url }}"
+		class="button {{ button_variation }} {{ button_size }} {{ button_classes }} {{ button_display }}"
 	>
 		<span class="button__text">
-			{{ text }}
+			{{ button_text }}
 		</span>
 	</a>
 

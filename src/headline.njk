@@ -1,0 +1,30 @@
+---
+layout: layouts/base.njk
+title: Headline
+---
+{% import "../components/headline/template.njk" as headline %}
+
+<h2 class="text-3xl mb-3">
+	Sizes
+</h2>
+<p class="mb-10">
+	Note: Remember to create button size and variation classes in Tailwind.
+</p>
+
+{{ headline.headline(
+		heading_text='Exploring headline design',
+		heading_size='4xl',
+		heading_level=2,
+		heading_classes="mb-3",
+		description_text="<p>Ut urna sapien, rhoncus, placerat quis lectus. Fusce metus est, venenatis et condimentum non, viverra at ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim felis, dignissim at libero tempor, sollicitudin convallis leo. Etiam nec pulvinar orci. Phasellus consectetur arcu sit amet magna sollicitudin lacinia. In commodo enim nec felis semper, luctus ornare tortor pharetra. Aliquam semper dapibus bibendum.</p>",
+		description_classes="mb-3 text-lg",
+		ctas=[
+			{
+				'button_text': "Primary"
+			},
+			{
+				'button_text': 'Secondary'
+			}
+		]
+	)
+}}

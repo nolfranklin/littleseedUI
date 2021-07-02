@@ -1,0 +1,46 @@
+{% macro headline(
+	heading_level,
+	heading_size,
+	heading_text,
+	heading_classes,
+	heading_id,
+	description_text,
+	description_classes,
+	ctas
+) %}
+
+	{% import "../button/template.njk" as button %}
+	{% import "../heading/template.njk" as heading %}
+
+	{# Heading template #}
+
+	<div class="component component--headline">
+		<div class="container mx-auto">
+			{{ heading.heading(
+					heading_text=heading_text,
+					heading_level=heading_level,
+					heading_size=heading_size,
+					heading_classes="component--headline__heading " + heading_classes
+				)
+			}}
+			<div class="component--headline__description {{ description_classes }}">
+				{{ description_text | safe }}
+			</div>
+			{% if ctas %}
+				<div class="component--headline__button-group">
+					{% for cta in ctas %}
+						{{ button.button(
+								button_text=cta.button_text,
+								button_url='https://google.ca/',
+								button_size="lg",
+								button_display="inline-block",
+								button_classes="text-lg mr-2 py-4 px-6 bg-indigo-800 border-indigo-800 hover:bg-indigo-700 text-white rounded"
+							)
+						}}
+					{% endfor %}
+				</div>
+			{% endif %}
+		</div>
+	</div>
+
+{% endmacro %}
