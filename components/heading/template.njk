@@ -60,7 +60,7 @@
 		class="heading {{ size }} {{ classes }}"
 		id="{{ id }}"
 	>
-		{{ text }}
+		{{ text | safe }}
 	</h{{level}}>
 
 {% endmacro %}

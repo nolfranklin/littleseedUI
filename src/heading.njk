@@ -1,6 +1,21 @@
 ---
 layout: layouts/base.njk
 title: Heading
+sizes:
+  - 'xs'
+  - 'sm'
+  - 'md'
+  - 'base'
+  - 'lg'
+  - 'xl'
+  - '2xl'
+  - '3xl'
+  - '4xl'
+  - '5xl'
+  - '6xl'
+  - '7xl'
+  - '8xl'
+  - '9xl'
 ---
 {% import "../components/heading/template.njk" as heading %}
 
@@ -8,30 +23,12 @@ title: Heading
 	Sizes
 </h2>
 
-{{ heading.heading(
-		text='Heading XS',
-		level=3,
-		size="xs"
-	)
-}}
-
-{{ heading.heading(
-		text='Heading MD',
-		level=3,
-		size="md"
-	)
-}}
-
-{{ heading.heading(
-		text='Heading LG',
-		level=3,
-		size="lg"
-	)
-}}
-
-{{ heading.heading(
-		text='Heading XL',
-		level=3,
-		size="xl"
-	)
-}}
+{% for size in sizes %}
+	{{ heading.heading(
+			text='Heading '+size,
+			level=3,
+			size=size,
+			classes="mb-6"
+		)
+	}}
+{% endfor %}
