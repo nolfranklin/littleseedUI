@@ -17,33 +17,33 @@
 	{# Headline template #}
 
 	<div class="component component--headline {{headline_classes }}">
-		<div class="{{ headline_container }}">
-			{{ heading.heading(
-					heading_text=heading_text,
-					heading_level=heading_level,
-					heading_size=heading_size,
-					heading_classes="component--headline__heading " + heading_classes
-				)
-			}}
+		{{ heading.heading(
+				heading_text=heading_text,
+				heading_level=heading_level,
+				heading_size=heading_size,
+				heading_classes="component--headline__heading " + heading_classes
+			)
+		}}
+		{% if description_text %}
 			<div class="component--headline__description {{ description_classes }}">
 				{{ description_text | safe }}
 			</div>
-			{% if ctas %}
-				<div class="component--headline__button-group">
-					{% for cta in ctas %}
-						{{ button.button(
-								button_text=cta.button_text,
-								button_url=cta.button_url,
-								button_size=cta.button_size,
-								button_display="inline-block",
-								button_classes=cta.button_classes,
-								button_variation=cta.button_variation
-							)
-						}}
-					{% endfor %}
-				</div>
-			{% endif %}
-		</div>
+		{% endif %}
+		{% if ctas %}
+			<div class="component--headline__button-group">
+				{% for cta in ctas %}
+					{{ button.button(
+							button_text=cta.button_text,
+							button_url=cta.button_url,
+							button_size=cta.button_size,
+							button_display="inline-block",
+							button_classes=cta.button_classes,
+							button_variation=cta.button_variation
+						)
+					}}
+				{% endfor %}
+			</div>
+		{% endif %}
 	</div>
 
 {% endmacro %}
