@@ -5,22 +5,49 @@ title: Figure
 {% import "../components/figure/template.njk" as figure %}
 
 <h2 class="text-3xl mb-3">
-	Sizes
+	Figure
 </h2>
 
+{% set img1 = "https://images.unsplash.com/photo-1550948390-6eb7fa773072?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format" %}
+{% set img2 = "https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format" %}
+{% set img3 = "https://images.unsplash.com/photo-1550948390-6eb7fa773072?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format" %}
+
 <div class="container mx-auto">
-{{ figure.figure(
-		image_src="https://images.unsplash.com/photo-1550948390-6eb7fa773072?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format",
-		image_params="&fit=crop&w=889&q=80",
-		image_alt="Monet's Garden",
-		image_figcaption="Exploring monet's garden",
-		image_srcset="
-			https://images.unsplash.com/photo-1550948390-6eb7fa773072?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80 1500w,
-			https://images.unsplash.com/photo-1550948390-6eb7fa773072?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=899&q=80 889w,
-			https://images.unsplash.com/photo-1550948390-6eb7fa773072?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80 768w
-		",
-		image_sizes="(min-width: 48em) 50vw, 100vw",
-		image_classes="rounded-lg w-full"
-	)
-}}
+	{{ figure.figure(
+			image_src=img1,
+			image_params="&fit=crop&w=889&q=80",
+			image_alt="Monet's Garden",
+			image_figcaption="Exploring monet's garden",
+			image_srcset=img1+"&fit=crop&w=1500&q=80 1500w, "+img1+"&fit=crop&w=899&q=80 889w, "+img1+"&fit=crop&w=768&q=80 768w",
+			image_sizes="(min-width: 48em) 50vw, 100vw",
+			image_classes="rounded-lg w-full"
+		)
+	}}
+</div>
+
+<div class="container mx-auto">
+	<div class="lg:grid grid-cols-2 gap-20">
+		{{ figure.figure(
+				image_src=img1,
+				image_params="&fit=crop&w=889&q=80",
+				image_alt="Monet's Garden",
+				image_figcaption="Exploring monet's garden",
+				image_srcset=img1+"&fit=crop&w=1500&q=80 1500w, "+img1+"&fit=crop&w=899&q=80 889w, "+img1+"&fit=crop&w=768&q=80 768w",
+				image_sizes="(min-width: 48em) 50vw, 100vw",
+				image_classes="rounded-lg w-full"
+			)
+		}}
+		{{ figure.figure(
+				image_src=img2,
+				image_params="&fit=crop&w=889&q=80",
+				image_alt="Photo of flowers and sky",
+				image_srcset=
+					img2+"&fit=crop&w=1500&q=80 1500w, "+
+					img2+"&fit=crop&w=899&q=80 889w, "+
+					img2+"&fit=crop&w=768&q=80 768w",
+				image_sizes="(min-width: 48em) 50vw, 100vw",
+				image_classes="rounded-lg w-full"
+			)
+		}}
+	</div>
 </div>
