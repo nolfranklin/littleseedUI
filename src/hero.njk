@@ -9,17 +9,58 @@ title: Hero
 </h2>
 
 {% set img1 = "https://images.unsplash.com/photo-1550948390-6eb7fa773072?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format" %}
-
+{% set img2 = "https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format" %}
 
 {{ hero.hero(
+	hero_layout="image-left",
+	hero_classes="",
+	hero_container="",
 	image_src=img1,
 	image_params="&fit=crop&w=889&q=80",
 	image_alt="Monet's Garden",
 	image_figcaption="",
 	image_srcset=img1+"&fit=crop&w=1500&q=80 1500w, "+img1+"&fit=crop&w=899&q=80 889w, "+img1+"&fit=crop&w=768&q=80 768w",
 	image_sizes="(min-width: 48em) 50vw, 100vw",
-	image_classes="w-full mb-10 md:mb-0",
-	headline_classes="align-middle md:pl-10",
+	image_classes="w-full mb-10 md:mb-0 rounded-lg",
+	headline_classes="align-middle",
+	headline_container="",
+	heading_text='Exploring Headline Design v2.0',
+	heading_size='6xl',
+	heading_level=2,
+	heading_classes="mb-3",
+	description_text="<p>Ut urna sapien, rhoncus, placerat quis enenatis et condimentum non, viverra at ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim felis, dignissim at libero tempor, sollicitudin convallis leo. Etiam nec pulvinar orci. Phasellus consectetur arcu sit amet magna sollicitudin lacinia. In commodo enim nec felis semper, luctus ornare tortor pharetra. Aliquam semper dapibus bibendum.</p>",
+	description_classes="mb-3 text-lg",
+	ctas=[
+		{
+			'button_text': "Primary",
+			'button_variation': 'primary',
+			'button_size': 'lg',
+			'button_url': 'https://google.ca/',
+			'button_classes': 'text-lg mr-2 py-4 px-6 bg-indigo-800 border border-indigo-800 hover:bg-indigo-700 text-white rounded'
+		},
+		{
+			'button_text': "Secondary",
+			'button_variation': 'secondary',
+			'button_size': 'lg',
+			'button_url': 'https://google.ca/',
+			'button_classes': 'text-lg mr-2 py-4 px-6 bg-green-800 border border-green-800 hover:bg-green-700 text-white rounded'
+		}
+	]
+	)
+}}
+
+{{ hero.hero(
+	hero_layout="image-right",
+	hero_classes="py-20 bg-gray-100 mt-20",
+	hero_container="",
+	image_src=img2,
+	image_params="&fit=crop&w=889&q=80",
+	image_alt="Monet's Garden",
+	image_figcaption="",
+	image_srcset=img2+"&fit=crop&w=1500&q=80 1500w, "+img2+"&fit=crop&w=899&q=80 889w, "+img2+"&fit=crop&w=768&q=80 768w",
+	image_sizes="(min-width: 48em) 50vw, 100vw",
+	image_classes="w-full mb-10 md:mb-0 rounded-lg",
+	headline_classes="align-middle",
 	headline_container="",
 	heading_text='Exploring Headline Design v2.0',
 	heading_size='6xl',

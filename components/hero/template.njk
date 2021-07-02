@@ -2,6 +2,9 @@
 {% import "../figure/template.njk" as figure %}
 
 {% macro hero(
+	hero_classes,
+	hero_container,
+	hero_layout,
 	image_src,
 	image_params,
 	image_alt,
@@ -20,33 +23,61 @@
 	ctas
 ) %}
 
-	{% set img1 = "https://images.unsplash.com/photo-1550948390-6eb7fa773072?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format" %}
+	{# Set hero container classes, default to container #}
 
-	<div class="component component--hero">
-		<div class="container mx-auto">
-		<div class="md:grid grid-cols-2 flex flex-wrap lg:items-center">
-			{{ figure.figure(
-					image_src=image_src,
-					image_params=image_params,
-					image_alt=image_alt,
-					image_figcaption=image_figcaption,
-					image_srcset=image_srcset,
-					image_sizes=image_sizes,
-					image_classes=image_classes
-				)
-			}}
-			{{ headline.headline(
-					headline_classes=headline_classes,
-					heading_text=heading_text,
-					heading_size=heading_size,
-					heading_level=heading_level,
-					heading_classes=heading_classes,
-					description_text=description_text,
-					description_classes=description_classes,
-					ctas=ctas
-				)
-			}}
-		</div>
+	{{ setContainer }}
+		{% if hero_container %}
+			{% set hero_container = hero_container %}
+		{% else %}
+			{% set hero_container = "mx-auto container" %}
+		{% endif %}
+	{{ setContainer }}
+
+	{# Set layout classes #}
+
+	{{ setLayout }}
+		{% if hero_layout === "image-left" %}
+			{% set hero_layout = "order-first md:pr-10" %}
+		{% elif hero_layout === "image-right"  %}
+			{% set hero_layout = "md:order-last md:pl-10" %}
+		{% else %}
+			{% set hero_layout = "" %}
+		{% endif %}
+	{{ setLayout }}
+
+	{# Hero template #}
+
+	<div
+		class="component component--hero {{ hero_classes }}"
+	>
+		<div class="{{ hero_container }}">
+			<div
+				class="md:grid grid-cols-2 flex flex-wrap lg:items-center"
+			>
+				{{ figure.figure(
+						figure_classes=hero_layout,
+						image_src=image_src,
+						image_params=image_params,
+						image_alt=image_alt,
+						image_figcaption=image_figcaption,
+						image_srcset=image_srcset,
+						image_sizes=image_sizes,
+						image_classes=image_classes
+					)
+				}}
+				{{ headline.headline(
+						headline_classes=headline_classes,
+						heading_text=heading_text,
+						heading_size=heading_size,
+						heading_level=heading_level,
+						heading_classes=heading_classes,
+						description_text=description_text,
+						description_classes=description_classes,
+						ctas=ctas
+					)
+				}}
+			</div>
 		</div>
 	</div>
+
 {% endmacro %}

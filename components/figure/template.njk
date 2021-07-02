@@ -1,4 +1,5 @@
 {% macro figure(
+	figure_classes,
 	image_src,
 	image_params,
 	image_alt,
@@ -10,7 +11,9 @@
 
 	{# Figure template #}
 
-	<figure class="component component--figure">
+	<figure
+		class="component component--figure {{ figure_classes }}"
+	>
 		<img
 			srcset="{{ image_srcset }}"
 			sizes="{{ image_sizes }}"
