@@ -1,4 +1,6 @@
 {% macro headline(
+	headline_classes,
+	headline_container,
 	heading_level,
 	heading_size,
 	heading_text,
@@ -12,10 +14,10 @@
 	{% import "../button/template.njk" as button %}
 	{% import "../heading/template.njk" as heading %}
 
-	{# Heading template #}
+	{# Headline template #}
 
-	<div class="component component--headline">
-		<div class="container mx-auto">
+	<div class="component component--headline {{headline_classes }}">
+		<div class="{{ headline_container }}">
 			{{ heading.heading(
 					heading_text=heading_text,
 					heading_level=heading_level,

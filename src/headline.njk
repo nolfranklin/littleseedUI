@@ -5,13 +5,12 @@ title: Headline
 {% import "../components/headline/template.njk" as headline %}
 
 <h2 class="text-3xl mb-3">
-	Sizes
+	Headline Variations
 </h2>
-<p class="mb-10">
-	Note: Remember to create button size and variation classes in Tailwind.
-</p>
 
 {{ headline.headline(
+		headline_classes="",
+		headline_container="",
 		heading_text='Exploring Headline Design',
 		heading_size='5xl',
 		heading_level=2,
