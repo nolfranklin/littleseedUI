@@ -1,13 +1,27 @@
-{% macro stacked(src, alt, figcaption) %}
+{% macro figure(
+	image_src,
+	image_params,
+	image_alt,
+	image_figcaption,
+	image_srcset,
+	image_classes,
+)%}
+
+	{# Figure template #}
+
 	<figure class="component component--figure">
 		<img
-			src="https://images.unsplash.com/photo-1571192776145-9f563c1df686?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
-			alt="alt"
+			src="{{ image_src }}{{ image_params }}"
+			alt="{{ image_alt }}"
+			loading="lazy"
+			class="{{ image_classes }}"
+			srcset="{{ image_srcset }}"
 		/>
 		{% if figcaption %}
 			<figcaption>
-				{{ figcaption }}
+				{{ image_figcaption }}
 			</figcaption>
 		{% endif %}
 	</figure>
+
 {% endmacro %}
