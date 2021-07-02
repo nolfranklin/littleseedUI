@@ -12,18 +12,28 @@ title: Headline
 </p>
 
 {{ headline.headline(
-		heading_text='Exploring headline design',
-		heading_size='4xl',
+		heading_text='Exploring Headline Design',
+		heading_size='5xl',
 		heading_level=2,
 		heading_classes="mb-3",
 		description_text="<p>Ut urna sapien, rhoncus, placerat quis lectus. Fusce metus est, venenatis et condimentum non, viverra at ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim felis, dignissim at libero tempor, sollicitudin convallis leo. Etiam nec pulvinar orci. Phasellus consectetur arcu sit amet magna sollicitudin lacinia. In commodo enim nec felis semper, luctus ornare tortor pharetra. Aliquam semper dapibus bibendum.</p>",
 		description_classes="mb-3 text-lg",
+		layout="image-right",
+		image=[],
 		ctas=[
 			{
-				'button_text': "Primary"
+				'button_text': "Primary",
+				'button_variation': 'primary',
+				'button_size': 'lg',
+				'button_url': 'https://google.ca/',
+				'button_classes': 'text-lg mr-2 py-4 px-6 bg-indigo-800 border border-indigo-800 hover:bg-indigo-700 text-white rounded'
 			},
 			{
-				'button_text': 'Secondary'
+				'button_text': "Secondary",
+				'button_variation': 'secondary',
+				'button_size': 'lg',
+				'button_url': 'https://google.ca/',
+				'button_classes': 'text-lg mr-2 py-4 px-6 bg-green-800 border border-green-800 hover:bg-green-700 text-white rounded'
 			}
 		]
 	)
