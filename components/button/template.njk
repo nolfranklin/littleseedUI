@@ -1,14 +1,24 @@
-{% macro button(text,url,size,variation,classes) %}
+{% macro button(text,url,size,variation,classes, display) %}
 
 	{# Set a button size. If empty, no clasess are applied #}
 
+	{{ setDisplay }}
+		{% if display === 'block' %}
+			{% set display = "block" %}
+		{% elif display === 'inline-block' %}
+			{% set display = "inline-block" %}
+		{% else %}
+			{% set display = '' %}
+		{% endif %}
+	{{ setDisplay }}
+
 	{{ setSize }}
 		{% if size === 'lg' %}
-			{% set size = "px-6 py-3 text-lg" %}
+			{% set size = "button--lg" %}
 		{% elif size === 'md' %}
-			{% set size = "px-4 py-2" %}
+			{% set size = "button-md" %}
 		{% elif size === 'sm' %}
-			{% set size = "px-3 py-1" %}
+			{% set size = "button-sm" %}
 		{% else %}
 			{% set size = '' %}
 		{% endif %}
@@ -16,11 +26,11 @@
 
 	{{ setVariation }}
 		{% if variation === 'primary' %}
-			{% set variation = "bg-primary-default text-white" %}
+			{% set variation = "button--primary" %}
 		{% elif variation === 'secondary' %}
-			{% set variation = "bg-secondary-default text-white" %}
+			{% set variation = "button--secondary" %}
 		{% elif variation === 'outline' %}
-			{% set variation = "px-3 py-1" %}
+			{% set variation = "button--outline" %}
 		{% else %}
 			{% set variation = '' %}
 		{% endif %}
@@ -28,9 +38,11 @@
 
 	<a
 		href="{{ url }}"
-		class="{{ variation }} {{ size }} {{ classes }} inline-block border"
+		class="button {{ variation }} {{ size }} {{ classes }} {{ display }}"
 	>
-		{{ text }}
+		<span class="button__text">
+			{{ text }}
+		</span>
 	</a>
 
 {% endmacro %}
