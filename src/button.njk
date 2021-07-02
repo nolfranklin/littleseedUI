@@ -4,4 +4,37 @@ title: Buttons
 ---
 {% import "../components/button/template.njk" as button %}
 
-{{ button.button('Primary Button') }}
+<h2 class="text-3xl mb-10">
+	Sizes
+</h2>
+
+{{ button.button(
+		text='Primary Button',
+		url='https://google.ca/',
+		size="lg",
+		classes="bg-indigo-800 border-indigo-800 hover:bg-indigo-700 text-white rounded"
+	)
+}}
+
+{{ button.button(
+		text='Primary Button',
+		url='https://google.ca/',
+		size="md",
+		classes="bg-indigo-800 border-indigo-800 hover:bg-indigo-700 text-white rounded"
+	)
+}}
+
+{{ button.button(
+		text='Primary Button',
+		url='https://google.ca/',
+		size="sm",
+		classes="bg-indigo-800 border-indigo-800 hover:bg-indigo-700 text-white rounded"
+	)
+}}
+
+{{ button.button(
+		text='Primary Button',
+		url='https://google.ca/',
+		classes="bg-indigo-800 border-indigo-800 hover:bg-indigo-700 text-white rounded"
+	)
+}}

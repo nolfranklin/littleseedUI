@@ -1,8 +1,36 @@
-{% macro button(text) %}
+{% macro button(text,url,size,variation,classes) %}
+
+	{# Set a button size. If empty, no clasess are applied #}
+
+	{{ setSize }}
+		{% if size === 'lg' %}
+			{% set size = "px-6 py-3 text-lg" %}
+		{% elif size === 'md' %}
+			{% set size = "px-4 py-2" %}
+		{% elif size === 'sm' %}
+			{% set size = "px-3 py-1" %}
+		{% else %}
+			{% set size = '' %}
+		{% endif %}
+	{{ setSize }}
+
+	{{ setVariation }}
+		{% if variation === 'primary' %}
+			{% set variation = "bg-primary-default text-white" %}
+		{% elif variation === 'secondary' %}
+			{% set variation = "bg-secondary-default text-white" %}
+		{% elif variation === 'outline' %}
+			{% set variation = "px-3 py-1" %}
+		{% else %}
+			{% set variation = '' %}
+		{% endif %}
+	{{ setVariation }}
+
 	<a
-		href="/"
-		class="bg-blue-900 text-white px-6 py-3 rounded inline-block"
+		href="{{ url }}"
+		class="{{ variation }} {{ size }} {{ classes }} inline-block border"
 	>
 		{{ text }}
 	</a>
+
 {% endmacro %}

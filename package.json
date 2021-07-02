@@ -1,10 +1,10 @@
 {
   "name": "seedui",
   "version": "1.0.0",
-  "description": "",
+  "description": "A collection of Nunjucks components.",
   "main": "index.js",
   "scripts": {},
-  "author": "",
+  "author": "Nol Franklin",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1"
