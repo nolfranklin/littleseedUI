@@ -1,14 +1,13 @@
-{% import "../button/template.njk" as button %}
-
 {% macro stacked(src, alt, figcaption) %}
 	<figure class="component component--figure">
 		<img
-			src="https://images.unsplash.com/photo-1571192776145-9f563c1df686?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+			src="https://images.unsplash.com/photo-1571192776145-9f563c1df686?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
 			alt="alt"
 		/>
-		<figcaption>
-			{{ figcaption }}
-		</figcaption>
-		{{ button.button("test") }}
+		{% if figcaption %}
+			<figcaption>
+				{{ figcaption }}
+			</figcaption>
+		{% endif %}
 	</figure>
 {% endmacro %}
