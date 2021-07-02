@@ -1,4 +1,4 @@
-{% import "../headline/template.njk" as headline %}
+{% import "../headline/template.njk" as seed_headline %}
 {% import "../figure/template.njk" as figure %}
 
 {% macro hero(
@@ -6,13 +6,7 @@
 	hero_container,
 	hero_layout,
 	image,
-	image_src,
-	image_params,
-	image_alt,
-	image_figcaption,
-	image_srcset,
-	image_sizes,
-	image_classes,
+	headline,
 	headline_classes,
 	headline_container,
 	heading_text,
@@ -66,15 +60,15 @@
 						image_classes=image.image_classes
 					)
 				}}
-				{{ headline.headline(
-						headline_classes=headline_classes,
-						heading_text=heading_text,
-						heading_size=heading_size,
-						heading_level=heading_level,
-						heading_classes=heading_classes,
-						description_text=description_text,
-						description_classes=description_classes,
-						ctas=ctas
+				{{ seed_headline.headline(
+						headline_classes=headline.headline_classes,
+						heading_text=headline.heading_text,
+						heading_size=headline.heading_size,
+						heading_level=headline.heading_level,
+						heading_classes=headline.heading_classes,
+						description_text=headline.description_text,
+						description_classes=headline.description_classes,
+						ctas=headline.ctas
 					)
 				}}
 			</div>
