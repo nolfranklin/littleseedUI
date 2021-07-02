@@ -1,0 +1,5 @@
+{% macro heading(heading_size, heading_level, text) %}
+	<h{{heading_level}} class="{{ heading_level }}">
+		{{ text }}
+	</h{{heading_level}}>
+{% endmacro %}
