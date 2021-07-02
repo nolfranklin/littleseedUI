@@ -5,6 +5,7 @@
 	hero_classes,
 	hero_container,
 	hero_layout,
+	image,
 	image_src,
 	image_params,
 	image_alt,
@@ -56,13 +57,13 @@
 			>
 				{{ figure.figure(
 						figure_classes=hero_layout,
-						image_src=image_src,
-						image_params=image_params,
-						image_alt=image_alt,
-						image_figcaption=image_figcaption,
-						image_srcset=image_srcset,
-						image_sizes=image_sizes,
-						image_classes=image_classes
+						image_src=image.image_src,
+						image_params=image.image_params,
+						image_alt=image.image_alt,
+						image_figcaption=image.image_figcaption,
+						image_srcset=image.image_srcset,
+						image_sizes=image.image_sizes,
+						image_classes=image.image_classes
 					)
 				}}
 				{{ headline.headline(
