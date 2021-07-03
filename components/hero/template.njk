@@ -23,9 +23,9 @@
 
 	{{ setLayout }}
 		{% if hero_layout === "image-left" %}
-			{% set hero_layout = "order-first md:pr-10" %}
+			{% set hero_layout = "order-first" %}
 		{% elif hero_layout === "image-right"  %}
-			{% set hero_layout = "md:order-last md:pl-10" %}
+			{% set hero_layout = "md:order-last" %}
 		{% else %}
 			{% set hero_layout = "" %}
 		{% endif %}

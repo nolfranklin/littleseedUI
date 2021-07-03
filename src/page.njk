@@ -4,6 +4,7 @@ title: Page Design Example
 ---
 {% import "../components/hero/template.njk" as hero %}
 {% import "../components/card/template.njk" as card %}
+{% import "../components/header/template.njk" as header %}
 
 
 {% set img1 = "https://images.unsplash.com/photo-1550948390-6eb7fa773072?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format" %}
@@ -11,7 +12,7 @@ title: Page Design Example
 
 {{ hero.hero(
 	hero_layout="image-right",
-	hero_classes="mb-20",
+	hero_classes="mb-20 py-20 bg-yellow-100",
 	hero_container="",
 	image={
 		"image_src": img1,
@@ -20,10 +21,10 @@ title: Page Design Example
 		"image_figcaption": "",
 		"image_srcset": img1+"&fit=crop&w=1500&q=80 1500w, "+img1+"&fit=crop&w=899&q=80 889w, "+img1+"&fit=crop&w=768&q=80 768w",
 		"image_sizes": "(min-width: 48em) 50vw, 100vw",
-		"image_classes": "w-full mb-10 md:mb-0"
+		"image_classes": "w-full"
 	},
 	headline={
-		"headline_classes": "align-middle",
+		"headline_classes": "mt-10",
 		"headline_container": "",
 		"heading_text": "Traveling to a magic garden in the Summer",
 		"heading_size": "",
@@ -50,6 +51,20 @@ title: Page Design Example
 		]
 	}
 	)
+}}
+
+{{ header.header(
+	headline={
+		"headline_classes": "mb-20 text-center max-w-xl container mx-auto",
+		"headline_container": "",
+		"heading_text": "Recent Articles",
+		"heading_size": "4xl",
+		"heading_level": 2,
+		"heading_url": "/card/",
+		"heading_classes": "mb-4",
+		"description_text": "<p>Ut urna sapien, Praesent enim felis. Phasellus consectetur arcu sit amet magna sollicitudin lacinia.</p>",
+		"description_classes": "mb-3"
+	})
 }}
 
 <div class="container mx-auto">

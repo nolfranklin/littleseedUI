@@ -1,0 +1,55 @@
+{% import "../headline/template.njk" as seed_headline %}
+
+{% macro header(
+	header_classes,
+	header_container,
+	header_layout,
+	headline
+) %}
+
+	{# Set header container classes, default to container #}
+
+	{{ setContainer }}
+		{% if header_container %}
+			{% set header_container = header_container %}
+		{% else %}
+			{% set header_container = "mx-auto container" %}
+		{% endif %}
+	{{ setContainer }}
+
+	{# Set layout classes #}
+
+	{{ setLayout }}
+		{% if header_layout === "image-left" %}
+			{% set header_layout = "order-first md:pr-10" %}
+		{% elif header_layout === "image-right"  %}
+			{% set header_layout = "md:order-last md:pl-10" %}
+		{% else %}
+			{% set header_layout = "" %}
+		{% endif %}
+	{{ setLayout }}
+
+	{# Header template #}
+
+	<div
+		class="component component--hero {{ header_classes }}"
+	>
+		<div
+			class="{{ header_container }}"
+		>
+			{{ seed_headline.headline(
+					headline_classes=headline.headline_classes,
+					heading_text=headline.heading_text,
+					heading_size=headline.heading_size,
+					heading_level=headline.heading_level,
+					heading_classes=headline.heading_classes,
+					heading_url=headline.heading_url,
+					description_text=headline.description_text,
+					description_classes=headline.description_classes,
+					ctas=headline.ctas
+				)
+			}}
+		</div>
+	</div>
+
+{% endmacro %}
