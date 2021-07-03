@@ -1,4 +1,11 @@
-{% macro heading(heading_level, heading_size, heading_text, heading_classes, heading_id) %}
+{% macro heading(
+	heading_level,
+	heading_size,
+	heading_text,
+	heading_classes,
+	heading_id,
+	heading_url
+) %}
 
 	{# Set button level (ex: 1-6), Defaults to 1 if empty #}
 
@@ -60,7 +67,16 @@
 		class="component component--heading {{ heading_size }} {{ heading_classes }}"
 		id="{{ heading_id }}"
 	>
-		{{ heading_text | safe }}
+		{% if heading_url %}
+			<a
+				href="{{ heading_url }}"
+				class="block"
+			>
+				{{ heading_text | safe }}
+			</a>
+		{% else %}
+			{{ heading_text | safe }}
+		{% endif %}
 	</h{{heading_level}}>
 
 {% endmacro %}

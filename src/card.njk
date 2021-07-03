@@ -19,15 +19,16 @@ title: Card
 				"image_figcaption": "",
 				"image_srcset": img1+"&fit=crop&w=1500&q=80 1500w, "+img1+"&fit=crop&w=899&q=80 889w, "+img1+"&fit=crop&w=768&q=80 768w",
 				"image_sizes": "(min-width: 48em) 50vw, 100vw",
-				"image_classes": "w-full mb-10 md:mb-3 rounded-lg"
+				"image_classes": "w-full"
 			},
 			headline={
-				"headline_classes": "align-middle",
+				"headline_classes": "mt-6",
 				"headline_container": "",
-				"heading_text": "A card title",
+				"heading_text": "Exploring card designs in Nunjucks + Eleventy",
 				"heading_size": "3xl",
 				"heading_level": 2,
-				"heading_classes": "mb-3",
+				"heading_url": "https://www.google.ca/123",
+				"heading_classes": "mb-4",
 				"description_text": "<p>Ut urna sapien, Praesent enim felis. Phasellus consectetur arcu sit amet magna sollicitudin lacinia.</p>",
 				"description_classes": "mb-3",
 				"ctas": [
@@ -51,10 +52,10 @@ title: Card
 				"image_figcaption": "",
 				"image_srcset": img2+"&fit=crop&w=1500&q=80 1500w, "+img2+"&fit=crop&w=899&q=80 889w, "+img2+"&fit=crop&w=768&q=80 768w",
 				"image_sizes": "(min-width: 48em) 50vw, 100vw",
-				"image_classes": "w-full mb-10 md:mb-3 rounded-lg"
+				"image_classes": "w-full"
 			},
 			headline={
-				"headline_classes": "align-middle",
+				"headline_classes": "mt-6",
 				"headline_container": "",
 				"heading_text": "A card title",
 				"heading_size": "3xl",
@@ -83,7 +84,7 @@ title: Card
 				"image_figcaption": "",
 				"image_srcset": img1+"&fit=crop&w=1500&q=80 1500w, "+img1+"&fit=crop&w=899&q=80 889w, "+img1+"&fit=crop&w=768&q=80 768w",
 				"image_sizes": "(min-width: 48em) 50vw, 100vw",
-				"image_classes": "w-full mb-10 md:mb-3 rounded-lg"
+				"image_classes": "w-full mb-10 md:mb-3"
 			},
 			headline={
 				"headline_classes": "align-middle",
@@ -103,6 +104,59 @@ title: Card
 						'button_classes': 'text-lg py-0 px-0 bg-white border border-transparent text-indigo-900 rounded ' 
 					}
 				]
+			}
+			)
+		}}
+	</div>
+</div>
+
+<div class="container mx-auto mt-10">
+	<div class="md:grid grid-cols-2 gap-20">
+		{{ card.stacked2(
+			card_url="http://google.ca/",
+			card_classes="mb-10 md:mb-0",
+			image={
+				"image_src": img1,
+				"image_params": "&fit=crop&w=889&q=80",
+				"image_alt": "Monet's Garden",
+				"image_figcaption": "",
+				"image_srcset": img1+"&fit=crop&w=1500&q=80 1500w, "+img1+"&fit=crop&w=899&q=80 889w, "+img1+"&fit=crop&w=768&q=80 768w",
+				"image_sizes": "(min-width: 48em) 50vw, 100vw",
+				"image_classes": "w-full mb-10 md:mb-6"
+			},
+			headline={
+				"headline_classes": "align-middle",
+				"headline_container": "",
+				"heading_text": "Exploring card designs in Nunjucks + Eleventy",
+				"heading_size": "3xl",
+				"heading_level": 2,
+				"heading_classes": "mb-3",
+				"description_text": "<p>Ut urna sapien, Praesent enim felis. Phasellus consectetur arcu sit amet magna sollicitudin lacinia.</p>",
+				"description_classes": "mb-3"
+			}
+			)
+		}}
+		{{ card.stacked2(
+			card_url="http://google.ca/",
+			image={
+				"image_src": img2,
+				"image_params": "&fit=crop&w=889&q=80",
+				"image_alt": "Monet's Garden",
+				"image_figcaption": "",
+				"image_srcset": img2+"&fit=crop&w=1500&q=80 1500w, "+img2+"&fit=crop&w=899&q=80 889w, "+img2+"&fit=crop&w=768&q=80 768w",
+				"image_sizes": "(min-width: 48em) 50vw, 100vw",
+				"image_classes": "w-full"
+			},
+			headline={
+				"headline_classes": "align-middle mt-6",
+				"headline_container": "",
+				"heading_text": "A card title",
+				"heading_size": "3xl",
+				"heading_level": 2,
+				"heading_classes": "mb-3",
+				"heading_url": "https://google.ca/2",
+				"description_text": "<p>Ut urna sapien, Praesent enim felis. Phasellus consectetur arcu sit amet magna sollicitudin lacinia.</p>",
+				"description_classes": "mb-3"
 			}
 			)
 		}}
