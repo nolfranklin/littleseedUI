@@ -1,6 +1,6 @@
 ---
 layout: layouts/base.njk
-title: Hero
+title: Page Design Example
 ---
 {% import "../components/hero/template.njk" as hero %}
 {% import "../components/card/template.njk" as card %}
@@ -25,27 +25,27 @@ title: Hero
 	headline={
 		"headline_classes": "align-middle",
 		"headline_container": "",
-		"heading_text": "Traveling to Monet's Garden in the Summer",
-		"heading_size": "6xl",
+		"heading_text": "Traveling to a magic garden in the Summer",
+		"heading_size": "",
 		"heading_level": 2,
-		"heading_classes": "mb-4",
+		"heading_classes": "mb-6 text-3xl md:text-4xl lg:text-6xl",
 		"heading_url": "https://www.google.ca/",
-		"description_text": "<p>Ut urna sapien, rhoncus, placerat quis enenatis et condimentum non, viverra at ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim felis, dignissim at libero tempor, sollicitudin convallis leo. Etiam nec pulvinar orci. Phasellus consectetur arcu sit amet magna sollicitudin lacinia. In commodo enim nec felis semper, luctus ornare tortor pharetra. Aliquam semper dapibus bibendum.</p>",
-		"description_classes": "mb-3 text-lg",
+		"description_text": "<p>Ut urna sapien, rhoncus, placerat quis enenatis et condimentum non, viverra at ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
+		"description_classes": "mb-6 md:text-xl",
 		"ctas": [
 			{
-				'button_text': "Primary",
+				'button_text': "Explore the garden",
 				'button_variation': 'primary',
 				'button_size': 'lg',
-				'button_url': 'https://google.ca/',
-				'button_classes': 'text-lg mr-2 py-4 px-6 bg-blue-700 border border-blue-700 text-white rounded'
+				'button_url': '/button/',
+				'button_classes': 'text-lg mr-2 py-3 px-5 bg-blue-700 border border-blue-700 text-white rounded'
 			},
 			{
-				'button_text': "Secondary",
+				'button_text': "See all events",
 				'button_variation': 'secondary',
 				'button_size': 'lg',
-				'button_url': 'https://google.ca/',
-				'button_classes': 'text-lg mr-2 py-4 px-6 border border-gray-300 text-gray-800 rounded'
+				'button_url': '/heading/',
+				'button_classes': 'text-lg mr-2 py-3 px-5 border border-gray-300 text-gray-800 rounded'
 			}
 		]
 	}
@@ -55,7 +55,7 @@ title: Hero
 <div class="container mx-auto">
 	<div class="md:grid grid-cols-3 gap-10 lg:gap-20">
 		{{ card.stacked2(
-			card_url="http://google.ca/",
+			card_url="/card/",
 			card_classes="mb-10 md:mb-0",
 			image={
 				"image_src": img1,
@@ -72,24 +72,15 @@ title: Hero
 				"heading_text": "Exploring card designs in Nunjucks + Eleventy",
 				"heading_size": "3xl",
 				"heading_level": 2,
-				"heading_url": "https://www.google.ca/123",
+				"heading_url": "/card/",
 				"heading_classes": "mb-4",
 				"description_text": "<p>Ut urna sapien, Praesent enim felis. Phasellus consectetur arcu sit amet magna sollicitudin lacinia.</p>",
-				"description_classes": "mb-3",
-				"ctas": [
-					{
-						'button_text': "Continue Reading >",
-						'button_variation': 'text',
-						'button_size': 'lg',
-						'button_url': 'https://google.ca/',
-						'button_classes': 'text-lg py-0 px-0 bg-white border border-transparent text-indigo-900 rounded ' 
-					}
-				]
+				"description_classes": "mb-3"
 			}
 			)
 		}}
 		{{ card.stacked2(
-			card_url="http://google.ca/",
+			card_url="/figure/",
 			card_classes="mb-10 md:mb-0",
 			image={
 				"image_src": img2,
@@ -105,19 +96,11 @@ title: Hero
 				"headline_container": "",
 				"heading_text": "A card title",
 				"heading_size": "3xl",
+				"heading_url": "/figure/",
 				"heading_level": 2,
 				"heading_classes": "mb-3",
 				"description_text": "<p>Ut urna sapien, Praesent enim felis. Phasellus consectetur arcu sit amet magna sollicitudin lacinia.</p>",
-				"description_classes": "mb-3",
-				"ctas": [
-					{
-						'button_text': "Continue Reading >",
-						'button_variation': 'text',
-						'button_size': 'lg',
-						'button_url': 'https://google.ca/',
-						'button_classes': 'text-lg py-0 px-0 bg-white border border-transparent text-indigo-900 rounded ' 
-					}
-				]
+				"description_classes": "mb-3"
 			}
 			)
 		}}
@@ -140,16 +123,7 @@ title: Hero
 				"heading_level": 2,
 				"heading_classes": "mb-3 mt-6",
 				"description_text": "<p>Ut urna sapien, Praesent enim felis. Phasellus consectetur arcu sit amet magna sollicitudin lacinia.</p>",
-				"description_classes": "mb-3",
-				"ctas": [
-					{
-						'button_text': "Continue Reading >",
-						'button_variation': 'text',
-						'button_size': 'lg',
-						'button_url': 'https://google.ca/',
-						'button_classes': 'text-lg py-0 px-0 bg-white border border-transparent text-blue-900 rounded underline' 
-					}
-				]
+				"description_classes": "mb-3"
 			}
 			)
 		}}
