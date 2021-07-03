@@ -23,9 +23,11 @@
 
 	{{ setLayout }}
 		{% if hero_layout === "image-left" %}
-			{% set hero_layout = "order-first" %}
+			{% set hero_image_position = "order-first" %}
+			{% set hero_headline_padding = "md:pl-10 lg:pl-20" %}
 		{% elif hero_layout === "image-right"  %}
-			{% set hero_layout = "md:order-last" %}
+			{% set hero_image_position = "md:order-last" %}
+			{% set hero_headline_padding = "md:pr-10 lg:pr-20" %}
 		{% else %}
 			{% set hero_layout = "" %}
 		{% endif %}
@@ -41,7 +43,7 @@
 				class="md:grid grid-cols-2 flex flex-wrap lg:items-center"
 			>
 				{{ figure.figure(
-						figure_classes=hero_layout,
+						figure_classes=hero_image_position,
 						image_src=image.image_src,
 						image_params=image.image_params,
 						image_alt=image.image_alt,
@@ -52,7 +54,7 @@
 					)
 				}}
 				{{ seed_headline.headline(
-						headline_classes=headline.headline_classes,
+						headline_classes=headline.headline_classes + ' ' + hero_headline_padding,
 						heading_text=headline.heading_text,
 						heading_size=headline.heading_size,
 						heading_level=headline.heading_level,

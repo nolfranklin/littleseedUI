@@ -13,7 +13,7 @@ title: Page Design Example
 {{ hero.hero(
 	hero_layout="image-right",
 	hero_classes="mb-20 py-20 bg-yellow-100",
-	hero_container="",
+	hero_container="mx-auto container px-4 md:px-0",
 	image={
 		"image_src": img1,
 		"image_params": "&fit=crop&w=889&q=80",
@@ -21,12 +21,12 @@ title: Page Design Example
 		"image_figcaption": "",
 		"image_srcset": img1+"&fit=crop&w=1500&q=80 1500w, "+img1+"&fit=crop&w=899&q=80 889w, "+img1+"&fit=crop&w=768&q=80 768w",
 		"image_sizes": "(min-width: 48em) 50vw, 100vw",
-		"image_classes": "w-full"
+		"image_classes": "w-full rounded shadow-2xl"
 	},
 	headline={
 		"headline_classes": "mt-10",
 		"headline_container": "",
-		"heading_text": "Traveling to a magic garden in the Summer",
+		"heading_text": "Traveling to a magic garden in the summer",
 		"heading_size": "",
 		"heading_level": 2,
 		"heading_classes": "mb-6 text-3xl md:text-4xl lg:text-6xl",
@@ -46,7 +46,7 @@ title: Page Design Example
 				'button_variation': 'secondary',
 				'button_size': 'lg',
 				'button_url': '/heading/',
-				'button_classes': 'text-lg mr-2 py-3 px-5 border border-gray-300 text-gray-800 rounded'
+				'button_classes': 'text-lg mr-2 py-3 px-5 border border-gray-900 text-gray-900 rounded'
 			}
 		]
 	}
