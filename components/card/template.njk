@@ -1,3 +1,45 @@
+{% import "../headline/template.njk" as seed_headline %}
+{% import "../figure/template.njk" as figure %}
+
+{% macro stacked2(
+	card_classes,
+	card_url,
+	image,
+	headline
+) %}
+	<div
+		class="component component--card {{ card_classes }}"
+	>
+		<a
+			href="{{ card_url }}"
+			class="flex flex-wrap"
+		>
+			{{ figure.figure(
+					figure_classes=hero_layout+" card__image",
+					image_src=image.image_src,
+					image_params=image.image_params,
+					image_alt=image.image_alt,
+					image_figcaption=image.image_figcaption,
+					image_srcset=image.image_srcset,
+					image_sizes=image.image_sizes,
+					image_classes=image.image_classes
+				)
+			}}
+		</a>
+		{{ seed_headline.headline(
+				headline_classes=headline.headline_classes,
+				heading_text=headline.heading_text,
+				heading_size=headline.heading_size,
+				heading_level=headline.heading_level,
+				heading_classes=headline.heading_classes,
+				description_text=headline.description_text,
+				description_classes=headline.description_classes,
+				ctas=headline.ctas
+			)
+		}}
+	</div>
+{% endmacro %}
+
 {% macro stacked(title, link, image, excerpt) %}
 	<div class="component component--card">
 		<a href="{{ link }}" class="flex flex-wrap">
