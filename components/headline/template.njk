@@ -1,4 +1,6 @@
 {% macro headline(
+	eyebrow_text,
+	eyebrow_classes,
 	headline_classes,
 	heading_level,
 	heading_size,
@@ -17,6 +19,11 @@
 	{# Headline template #}
 
 	<div class="component component--headline {{headline_classes }}">
+		{% if eyebrow_text %}
+		<span class="headline__eyebrow {{ eyebrow_classes }}">
+			{{ eyebrow_text }}
+		</span>
+		{% endif %}
 		{{ heading.heading(
 				heading_text=heading_text,
 				heading_level=heading_level,
