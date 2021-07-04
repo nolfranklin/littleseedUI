@@ -1,11 +1,19 @@
-{% macro blockquote(text,cite) %}
-	<div class="component component--blockquote">
-		<blockquote class="py-10">
-			<span class="text-4xl">
-				{{ text }}
+{% macro blockquote(
+	blockquote_classes,
+	blockquote_text_classes,
+	blockquote_cite_classes,
+	blockquote_text,
+	blockquote_cite
+) %}
+	<div
+		class="component component--blockquote {{ blockquote_classes }}"
+	>
+		<blockquote>
+			<span class="component--blockquote__text {{ blockquote_text_classes }}">
+				{{ blockquote_text }}
 			</span>
-			<cite>
-				{{ cite }}
+			<cite class="component--blockquote__cite {{ blockquote_cite_classes }}">
+				{{ blockquote_cite }}
 			</cite>
 		</blockquote>
 	</div>
