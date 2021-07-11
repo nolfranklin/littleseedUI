@@ -21,7 +21,7 @@
 	<div class="component component--headline {{headline_classes }}">
 		{% if eyebrow_text %}
 		<span class="headline__eyebrow {{ eyebrow_classes }}">
-			{{ eyebrow_text }}
+			{{ eyebrow_text | safe }}
 		</span>
 		{% endif %}
 		{{ heading.heading(
