@@ -2,6 +2,7 @@
 {% import "../figure/template.njk" as figure %}
 
 {% macro hero(
+	hero_url,
 	hero_classes,
 	hero_container,
 	hero_layout,
@@ -42,6 +43,13 @@
 			<div
 				class="md:grid grid-cols-2 flex flex-wrap lg:items-center"
 			>
+				{% if hero_url %}
+				<a
+					href="{{ card_url }}"
+					class="flex-shrink-0 object-none"
+					tabindex="-1"
+				>
+				{% endif %}
 				{{ figure.figure(
 						figure_classes=hero_image_position,
 						image_src=image.image_src,
@@ -53,6 +61,9 @@
 						image_classes=image.image_classes
 					)
 				}}
+				{% if hero_url %}
+				</a>
+				{% endif %}
 				{{ seed_headline.headline(
 						eyebrow_text=headline.eyebrow_text,
 						eyebrow_classes=headline.eyebrow_classes,

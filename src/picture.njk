@@ -1,0 +1,37 @@
+---
+layout: layouts/base.njk
+title: Picture Component
+---
+{% import "../components/picture/template.njk" as picture %}
+
+<h2 class="text-3xl mb-3">
+	Picture
+</h2>
+
+{% set img1 = "https://images.unsplash.com/photo-1550948390-6eb7fa773072?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format" %}
+{% set img2 = "https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format" %}
+{% set img3 = "https://images.unsplash.com/photo-1550948390-6eb7fa773072?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format" %}
+
+<div class="container mx-auto max-w-3xl">
+	{{ picture.figure(
+			picture_classes="",
+			image_src=img1,
+			image_params="&fit=crop&w=889&q=80",
+			image_alt="Monet's Garden",
+			image_figcaption="Exploring monet's garden",
+			image_classes="rounded-lg w-full",
+			image_sources=[
+				{
+					"media":"(max-width: 799px)",
+					"srcset":img1+"&fit=crop&w=800&h=800&q=80"
+				},
+				{
+					"media": "(min-width: 800px)",
+					"srcset": img1+"&fit=crop&w=1500&q=80"
+				}
+			]
+		)
+	}}
+
+
+</div>

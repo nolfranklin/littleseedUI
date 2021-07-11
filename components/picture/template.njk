@@ -1,0 +1,37 @@
+{% macro figure(
+	picture_classes,
+	image_src,
+	image_params,
+	image_alt,
+	image_figcaption,
+	image_sources,
+	image_classes
+)%}
+
+	{# Picture template #}
+
+	<figure
+		class="component component--picture {{ picture_classes }}"
+	>
+		<picture>
+		{% for source in image_sources %}
+			<source
+				media="{{ source.media }}"
+				srcset="{{ source.srcset }}"
+			/>
+		{% endfor %}
+		<img
+			src="{{ image_src }}{{ image_params }}"
+			alt="{{ image_alt }}"
+			loading="lazy"
+			class="component--picture__image {{ image_classes }}"
+		/>
+		</picture>
+		{% if image_figcaption %}
+			<figcaption class="component--figure__figcaption">
+				{{ image_figcaption }}
+			</figcaption>
+		{% endif %}
+	</figure>
+
+{% endmacro %}
