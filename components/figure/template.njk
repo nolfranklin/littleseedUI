@@ -6,7 +6,9 @@
 	image_figcaption,
 	image_srcset,
 	image_sizes,
-	image_classes
+	image_classes,
+	image_width,
+	image_height
 )%}
 
 	{# Figure template #}
@@ -21,6 +23,8 @@
 			alt="{{ image_alt }}"
 			loading="lazy"
 			class="component--figure__image {{ image_classes }}"
+			width="{{ image_width }}"
+			height="{{ image_height }}"
 		/>
 		{% if image_figcaption %}
 			<figcaption class="component--figure__figcaption">

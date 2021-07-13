@@ -5,7 +5,9 @@
 	image_alt,
 	image_figcaption,
 	image_sources,
-	image_classes
+	image_classes,
+	image_width,
+	image_height
 )%}
 
 	{# Picture template #}
@@ -25,6 +27,8 @@
 			alt="{{ image_alt }}"
 			loading="lazy"
 			class="component--picture__image {{ image_classes }}"
+			width="{{ image_width }}"
+			height="{{ image_height }}"
 		/>
 		</picture>
 		{% if image_figcaption %}
